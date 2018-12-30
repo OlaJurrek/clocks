@@ -1,0 +1,152 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #4ca1af, 30%, #fff);
+}
+
+.local-clock {
+  width: 250px;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.clock-face {
+  position: relative;
+  border: 6px solid #5691c8;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.local-clock .clock-face {
+  height: 250px;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-left: 10px;
+  border-radius: 20px;
+  transform-origin: right;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0, 2.83);
+}
+
+.hours {
+  height: 5px;
+  width: 85px;
+  background-color: #3498db;
+  background-color: darkslateblue;
+}
+
+.minutes {
+  height: 4px;
+  width: 100px;
+  background-color: #5691c8;
+}
+
+.seconds {
+  height: 2px;
+  width: 110px;
+  background-color: #3a5c7c;
+}
+
+.clock-caption {
+  width: 150px;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.clock-caption > * {
+  border-radius: 5px/20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.clock-caption p {
+  margin-bottom: 5px;
+  padding: 5px 0;
+  border: 2px solid rgb(113, 136, 179);
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.digital-time {
+  padding: 2px 0;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Cities' clocks styles */
+
+.cities-clocks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.city-clock {
+  width: 150px;
+}
+
+/* Cities' clocks faces */
+
+.city-clock .clock-face {
+  height: 150px;
+  border: 4px solid #5691c8;
+}
+
+#NY .clock-face {
+  background: radial-gradient(#dad299 30%, #a6d4b0);
+}
+
+#london .clock-face {
+  background: radial-gradient(#bdfff3, 70%, #4ac29a);
+}
+
+#moscow .clock-face {
+  background: radial-gradient(#eef2f3, 70%, #8e9eab);
+}
+
+#tokyo .clock-face {
+  background: radial-gradient(#eeded0 30%, 70%, #c598ca);
+}
+
+/* Cities clocks hands */
+
+.cities-clocks .hours {
+  height: 4px;
+  width: 50px;
+}
+
+.cities-clocks .minutes {
+  height: 3px;
+  width: 55px;
+  transform: rotate(15deg);
+}
+
+.cities-clocks .seconds {
+  width: 63px;
+  transform: rotate(0deg);
+}
+
+/* Cities clocks captions */
+
+.cities-clocks .clock-caption > * {
+  font-size: 1rem;
+}
+
+.cities-clocks .clock-caption p {
+  border: 1.5px solid rgb(113, 136, 179);
+}
