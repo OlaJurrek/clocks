@@ -94,10 +94,12 @@ body {
 .cities-clocks {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .city-clock {
   width: 150px;
+  margin: 30px 40px;
 }
 
 /* Cities' clocks faces */
