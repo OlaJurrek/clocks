@@ -1,5 +1,7 @@
 // Variables
 
+// it could be a function - print time in format '00 : 00 : 00' instead of repeating it twice - so loong
+
 // Hands
 const hands = document.querySelectorAll(".hand");
 const hourHands = document.querySelectorAll(".hours");
@@ -48,9 +50,23 @@ function setLocalTime() {
   // Move only local hour hand
   hourHands[0].style.transform = `rotate(${hoursDegree}deg)`;
 
-  //Print local time below the clock face
+  //Print local time below the clock face in format '00 : 00 : 00'
+  const localHours = currentTime
+    .getHours()
+    .toString()
+    .padStart(2, "0");
 
-  localDigitalTime.innerHTML = currentTime.toLocaleTimeString();
+  const localMinutes = currentTime
+    .getMinutes()
+    .toString()
+    .padStart(2, "0");
+
+  const localSeconds = currentTime
+    .getSeconds()
+    .toString()
+    .padStart(2, "0");
+
+  localDigitalTime.innerHTML = `${localHours} : ${localMinutes} : ${localSeconds}`;
 }
 
 setInterval(setLocalTime, 1000);
@@ -73,8 +89,25 @@ function setCityTime(d) {
     // Convert UTC to timezone
     d.setMinutes(d.getMinutes() + citiesOffsets[i]);
 
-    // Print local time below the clock face
-    citiesDigitalTime[i].innerHTML = d.toLocaleTimeString();
+    // Print local time below the clock face in format '00 : 00 : 00'
+    const citiesHours = d
+      .getHours()
+      .toString()
+      .padStart(2, "0");
+
+    const citiesMinutes = d
+      .getMinutes()
+      .toString()
+      .padStart(2, "0");
+
+    const citiesSeconds = d
+      .getSeconds()
+      .toString()
+      .padStart(2, "0");
+
+    citiesDigitalTime[
+      i
+    ].innerHTML = `${citiesHours} : ${citiesMinutes} : ${citiesSeconds}`;
 
     // Move hour hand according to timezone
     const hoursDegree = (d.getHours() / 12) * 360 + 90;

@@ -1,0 +1,1 @@
+The aim of this project was to get familiar with Date Object and some CSS3 properties such as box-shadow, text-shadow, border-radius and animations.

@@ -3,6 +3,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: #1fa2ff;
+  --pink: #cf8bf3;
+  /* --turquoise: #09f5e9; */
+  --turquoise: #12fff7;
+  --violet: #9733ee;
+  --yellow: #ffdd1b;
+}
+
+@font-face {
+  font-family: "Kalinka";
+  src: url(fonts/Kalinka.ttf);
+}
+
+@font-face {
+  font-family: "Apropal";
+  src: url(fonts/Apropal-Bold.ttf);
+}
+
 html,
 body,
 p {
@@ -11,7 +30,7 @@ p {
 }
 
 body {
-  background: linear-gradient(to right, #4ca1af, 30%, #fff);
+  background: url(irongrip.png);
 }
 
 .local-clock {
@@ -22,9 +41,19 @@ body {
 
 .clock-face {
   position: relative;
-  border: 6px solid #5691c8;
+  border: 3px solid #fff;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  /* animation: neon-border 0.08s ease-in-out infinite alternate; */
+  box-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+    0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52),
+    0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78),
+    0 0 13px rgba(163, 183, 204, 0.92), inset 0 0 6px rgba(202, 228, 225, 0.92),
+    inset 0 0 8px rgba(202, 228, 225, 0.34),
+    inset 0 0 10px rgba(163, 183, 204, 0.52),
+    inset 0 0 9px rgba(163, 183, 204, 0.92),
+    inset 0 0 13px rgba(163, 183, 204, 0.78),
+    inset 0 0 13px rgba(163, 183, 204, 0.92);
 }
 
 .local-clock .clock-face {
@@ -35,31 +64,31 @@ body {
   position: absolute;
   top: 50%;
   right: 50%;
+  height: 2px;
   margin-left: 10px;
   border-radius: 20px;
   transform-origin: right;
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.42, 0, 0, 2.83);
+  background-color: #58a3d4;
+  background-color: #5083a5;
+  box-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
+    0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52),
+    0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78),
+    0 0 13px rgba(163, 183, 204, 0.92);
 }
 
 .hours {
-  height: 5px;
-  width: 85px;
-  background-color: #3498db;
-  background-color: darkslateblue;
+  width: 75px;
 }
 
 .minutes {
-  height: 4px;
-  width: 100px;
-  background-color: #5691c8;
+  width: 95px;
 }
 
 .seconds {
-  height: 2px;
   width: 110px;
-  background-color: #3a5c7c;
 }
 
 .clock-caption {
@@ -70,85 +99,177 @@ body {
 
 .clock-caption > * {
   border-radius: 5px/20px;
-  font-family: "Montserrat", sans-serif;
 }
 
 .clock-caption p {
   margin-bottom: 5px;
   padding: 5px 0;
-  border: 2px solid rgb(113, 136, 179);
   text-transform: capitalize;
   font-size: 1.5rem;
   font-weight: 500;
+  font-family: "Apropal", sans-serif;
   letter-spacing: 2px;
+  color: var(--yellow);
+}
+
+.clock-caption p:hover {
+  color: #fff;
+  animation: neon-yellow 1.5s ease-in-out infinite alternate;
 }
 
 .digital-time {
   padding: 2px 0;
   font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, 0.6);
+  font-family: "Sarpanch", sans-serif;
+  border: 1px solid rgb(113, 136, 179);
+  color: #fff;
 }
 
 /* Cities' clocks styles */
-
 .cities-clocks {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 .city-clock {
   width: 150px;
-  margin: 30px 40px;
+  margin: 20px 40px;
 }
-
 /* Cities' clocks faces */
-
 .city-clock .clock-face {
   height: 150px;
-  border: 4px solid #5691c8;
-}
-
-#NY .clock-face {
-  background: radial-gradient(#dad299 30%, #a6d4b0);
-}
-
-#london .clock-face {
-  background: radial-gradient(#bdfff3, 70%, #4ac29a);
-}
-
-#moscow .clock-face {
-  background: radial-gradient(#eef2f3, 70%, #8e9eab);
-}
-
-#tokyo .clock-face {
-  background: radial-gradient(#eeded0 30%, 70%, #c598ca);
+  border: 2px solid #fff;
 }
 
 /* Cities clocks hands */
-
 .cities-clocks .hours {
-  height: 4px;
-  width: 50px;
+  width: 40px;
 }
-
 .cities-clocks .minutes {
-  height: 3px;
   width: 55px;
   transform: rotate(15deg);
 }
-
 .cities-clocks .seconds {
   width: 63px;
   transform: rotate(0deg);
 }
 
 /* Cities clocks captions */
-
-.cities-clocks .clock-caption > * {
-  font-size: 1rem;
+.cities-clocks .clock-caption p {
+  letter-spacing: 2px;
 }
 
-.cities-clocks .clock-caption p {
-  border: 1.5px solid rgb(113, 136, 179);
+.cities-clocks .clock-caption p:hover {
+  color: #fff;
+}
+
+/* New York */
+.city-clock:nth-child(1) p {
+  font-family: "Pacifico", cursive;
+  color: var(--turquoise);
+}
+
+.city-clock:nth-child(1) p:hover {
+  animation: neon-turquoise 1.5s ease-in-out infinite alternate;
+}
+
+/* London */
+.city-clock:nth-child(2) p {
+  font-family: "Plaster", cursive;
+  color: var(--pink);
+}
+
+.city-clock:nth-child(2) p:hover {
+  animation: neon-pink 1.5s ease-in-out infinite alternate;
+}
+
+/* Moscow */
+.city-clock:nth-child(3) p {
+  font-family: "Kalinka", sans-serif;
+  color: var(--blue);
+}
+
+.city-clock:nth-child(3) p:hover {
+  animation: neon-blue 1.5s ease-in-out infinite alternate;
+}
+
+/* Tokyo  */
+.city-clock:nth-child(4) p {
+  font-family: "Audiowide", cursive;
+  color: var(--violet);
+}
+
+.city-clock:nth-child(4) p:hover {
+  animation: neon-violet 1.5s ease-in-out infinite alternate;
+}
+
+/* Text effects */
+
+/*-- Animation Keyframes --*/
+
+@keyframes neon-blue {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+      0 0 40px var(--blue), 0 0 70px var(--blue), 0 0 80px var(--blue),
+      0 0 100px var(--blue), 0 0 150px var(--blue);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px var(--blue), 0 0 35px var(--blue), 0 0 40px var(--blue),
+      0 0 50px var(--blue), 0 0 75px var(--blue);
+  }
+}
+
+@keyframes neon-pink {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+      0 0 40px var(--pink), 0 0 70px var(--pink), 0 0 80px var(--pink),
+      0 0 100px var(--pink), 0 0 150px var(--pink);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px var(--pink), 0 0 35px var(--pink), 0 0 40px var(--pink),
+      0 0 50px var(--pink), 0 0 75px var(--pink);
+  }
+}
+
+@keyframes neon-turquoise {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+      0 0 40px var(--turquoise), 0 0 70px var(--turquoise),
+      0 0 80px var(--turquoise), 0 0 100px var(--turquoise),
+      0 0 150px var(--turquoise);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px var(--turquoise), 0 0 35px var(--turquoise),
+      0 0 40px var(--turquoise), 0 0 50px var(--turquoise),
+      0 0 75px var(--turquoise);
+  }
+}
+
+@keyframes neon-violet {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+      0 0 40px var(--violet), 0 0 70px var(--violet), 0 0 80px var(--violet),
+      0 0 100px var(--violet), 0 0 150px var(--violet);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px var(--violet), 0 0 35px var(--violet), 0 0 40px var(--violet),
+      0 0 50px var(--violet), 0 0 75px var(--violet);
+  }
+}
+
+@keyframes neon-yellow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+      0 0 40px var(--yellow), 0 0 70px var(--yellow), 0 0 80px var(--yellow),
+      0 0 100px var(--yellow), 0 0 150px var(--yellow);
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+      0 0 20px var(--yellow), 0 0 35px var(--yellow), 0 0 40px var(--yellow),
+      0 0 50px var(--yellow), 0 0 75px var(--yellow);
+  }
 }
