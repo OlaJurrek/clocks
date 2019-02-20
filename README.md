@@ -1,5 +1,5 @@
 ## Pure JS Clocks :clock1030: with Neon Glow Effect :sparkles:
-The aim of this project was to get more familiar with **Date object** and some CSS3 properties such as box-shadow, text-shadow, border-radius, animations and CSS variables. I wanted also to use any other Web Fonts that Google Fonts.
+The aim of this project was to get more familiar with **Date object** and some CSS3 properties such as box-shadow, text-shadow, border-radius, animations and CSS variables. I wanted also to use any other Web Fonts that Google Fonts to practise using @font-face.
 
 
 
