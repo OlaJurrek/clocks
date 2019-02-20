@@ -12,9 +12,6 @@ const citiesDigitalTime = document.querySelectorAll(
   ".cities-clocks .digital-time"
 );
 
-// Offsets in minutes - NY: -5 h, London: 0 h, Moscow: 3 h, Tokyo: 9 hours from UTC
-const citiesOffsets = [-300, 0, 180, 540];
-
 // Set Local Time
 function setLocalTime() {
   const currentTime = new Date();
@@ -59,14 +56,15 @@ setInterval(setLocalTime, 1000);
 
 setInterval(setCitiesTime, 1000);
 
-// Set time for 4 other cities
+// Offsets from UTC in minutes - NY: -5 h, London: 0 h, Moscow: 3 h, Tokyo: 9 hours
+const citiesOffsets = [-300, 0, 180, 540];
 
+// Set time for 4 other cities
 function setCitiesTime() {
   const d = new Date();
   const UTCoffset = d.getTimezoneOffset();
 
   d.setMinutes(d.getMinutes() + UTCoffset);
-
   setCityTime(d);
 }
 
