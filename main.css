@@ -1,12 +1,7 @@
-/* Reset CSS */
-* {
-  box-sizing: border-box;
-}
-
+/* Basic styles */
 :root {
   --blue: #1fa2ff;
   --pink: #cf8bf3;
-  /* --turquoise: #09f5e9; */
   --turquoise: #12fff7;
   --violet: #9733ee;
   --yellow: #ffdd1b;
@@ -14,12 +9,17 @@
 
 @font-face {
   font-family: "Kalinka";
-  src: url(fonts/Kalinka.ttf);
+  src: url(fonts/kalinka-webfont.woff2), url(fonts/kalinka-webfont.woff);
 }
 
 @font-face {
   font-family: "Apropal";
-  src: url(fonts/Apropal-Bold.ttf);
+  src: url(fonts/apropal-bold-webfont.woff2),
+    url(fonts/apropal-bold-webfont.woff);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html,
@@ -33,6 +33,7 @@ body {
   background: url(irongrip.png);
 }
 
+/* General clock styles */
 .local-clock {
   width: 250px;
   margin: auto;
@@ -43,8 +44,6 @@ body {
   position: relative;
   border: 3px solid #fff;
   border-radius: 50%;
-  /* background-color: rgba(255, 255, 255, 0.2); */
-  /* animation: neon-border 0.08s ease-in-out infinite alternate; */
   box-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
     0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52),
     0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78),
@@ -69,9 +68,7 @@ body {
   border-radius: 20px;
   transform-origin: right;
   transform: rotate(90deg);
-  transition: all 0.05s;
-  transition-timing-function: cubic-bezier(0.42, 0, 0, 2.83);
-  background-color: #58a3d4;
+  transition: all 0.05s cubic-bezier(0.42, 0, 0, 2.83);
   background-color: #5083a5;
   box-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
     0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52),
@@ -104,12 +101,10 @@ body {
 .clock-caption p {
   margin-bottom: 5px;
   padding: 5px 0;
-  text-transform: capitalize;
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: "Apropal", sans-serif;
-  letter-spacing: 2px;
+  font: 1.5rem "Apropal", sans-serif;
   color: var(--yellow);
+  text-transform: capitalize;
+  letter-spacing: 2px;
 }
 
 .clock-caption p:hover {
@@ -118,10 +113,11 @@ body {
 }
 
 .digital-time {
+  width: 120px;
+  margin: auto;
   padding: 2px 0;
-  font-size: 1.2rem;
-  font-family: "Sarpanch", sans-serif;
   border: 1px solid rgb(113, 136, 179);
+  font: 1.2rem "Sarpanch", sans-serif;
   color: #fff;
 }
 
@@ -131,10 +127,12 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .city-clock {
   width: 150px;
   margin: 20px 40px;
 }
+
 /* Cities' clocks faces */
 .city-clock .clock-face {
   height: 150px;
@@ -145,16 +143,25 @@ body {
 .cities-clocks .hours {
   width: 40px;
 }
+
 .cities-clocks .minutes {
   width: 55px;
   transform: rotate(15deg);
 }
+
 .cities-clocks .seconds {
   width: 63px;
   transform: rotate(0deg);
 }
 
 /* Cities clocks captions */
+.cities-clocks .clock-caption div:first-child {
+  display: flex;
+  height: 53px;
+  align-items: center;
+  justify-content: center;
+}
+
 .cities-clocks .clock-caption p {
   letter-spacing: 2px;
 }
@@ -204,8 +211,6 @@ body {
 }
 
 /* Text effects */
-
-/*-- Animation Keyframes --*/
 
 @keyframes neon-blue {
   from {

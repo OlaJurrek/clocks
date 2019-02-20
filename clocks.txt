@@ -1,1 +1,15 @@
 The aim of this project was to get familiar with Date Object and some CSS3 properties such as box-shadow, text-shadow, border-radius and animations.
+
+CSS variables
+
+font-face
+how to load other fonts that simply Google Fonts.
+
+
+To do:
+1 other neon animations
+2 all cities digital time boxes should be at the same level (baseline? the same height of div with city name?)
+3 function to display time in format 00 : 00 : 00
+4 narrower digital time boxes - chyba maja jakas procentowa wartosc od tarczy zegara teraz
+5 sprawdzic font-face i czy nie trzeba dodac innych formatow fontow, czy kazdy font musi byc w osobnej dyrektywie
+6 czy warsaw po prostu osobnej klasy local nie powinno miec?

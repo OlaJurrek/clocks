@@ -1,7 +1,5 @@
 // Variables
 
-// it could be a function - print time in format '00 : 00 : 00' instead of repeating it twice - so loong
-
 // Hands
 const hands = document.querySelectorAll(".hand");
 const hourHands = document.querySelectorAll(".hours");
@@ -18,7 +16,6 @@ const citiesDigitalTime = document.querySelectorAll(
 const citiesOffsets = [-300, 0, 180, 540];
 
 // Set Local Time
-
 function setLocalTime() {
   const currentTime = new Date();
 
@@ -51,22 +48,11 @@ function setLocalTime() {
   hourHands[0].style.transform = `rotate(${hoursDegree}deg)`;
 
   //Print local time below the clock face in format '00 : 00 : 00'
-  const localHours = currentTime
-    .getHours()
-    .toString()
-    .padStart(2, "0");
+  const formattedHours = hours.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, "0");
+  const formattedSeconds = seconds.toString().padStart(2, "0");
 
-  const localMinutes = currentTime
-    .getMinutes()
-    .toString()
-    .padStart(2, "0");
-
-  const localSeconds = currentTime
-    .getSeconds()
-    .toString()
-    .padStart(2, "0");
-
-  localDigitalTime.innerHTML = `${localHours} : ${localMinutes} : ${localSeconds}`;
+  localDigitalTime.innerHTML = `${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`;
 }
 
 setInterval(setLocalTime, 1000);
@@ -90,24 +76,24 @@ function setCityTime(d) {
     d.setMinutes(d.getMinutes() + citiesOffsets[i]);
 
     // Print local time below the clock face in format '00 : 00 : 00'
-    const citiesHours = d
+    const formattedHours = d
       .getHours()
       .toString()
       .padStart(2, "0");
 
-    const citiesMinutes = d
+    const formattedMinutes = d
       .getMinutes()
       .toString()
       .padStart(2, "0");
 
-    const citiesSeconds = d
+    const formattedSeconds = d
       .getSeconds()
       .toString()
       .padStart(2, "0");
 
     citiesDigitalTime[
       i
-    ].innerHTML = `${citiesHours} : ${citiesMinutes} : ${citiesSeconds}`;
+    ].innerHTML = `${formattedHours} : ${formattedMinutes} : ${formattedSeconds}`;
 
     // Move hour hand according to timezone
     const hoursDegree = (d.getHours() / 12) * 360 + 90;
