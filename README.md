@@ -1,9 +1,10 @@
-## Pure JS Clocks with Neon Glow Effect :clock1030:
+## Pure JS Clocks :clock1030:
+### with Neon Glow Effect :sparkles:
 The aim of this project was to get more familiar with **Date object** and some CSS3 properties such as box-shadow, text-shadow, border-radius, animations and CSS variables. I wanted also to use any other Web Fonts that Google Fonts.
 
 
 
-Since you are there don't forget to hover on city names to see them glowing :fireworks: :high_brightness:
+Since you are there don't forget to hover on city names to see them glowing :fireworks:
 
 [See demo](https://olajurrek.github.io/clocks/)
 
