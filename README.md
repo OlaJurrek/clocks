@@ -3,7 +3,7 @@ The aim of this project was to get more familiar with **Date object** and some C
 
 
 
-Since you are here do not forget to hover on city names to see them glowing :wink:
+Since you are here do not forget to hover over city names to see them glowing :wink:
 
 [See demo](https://olajurrek.github.io/clocks/)
 
