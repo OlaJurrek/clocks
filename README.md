@@ -3,9 +3,9 @@ The aim of this project was to get more familiar with **Date object** and some C
 
 
 
-Since you are there don't forget to hover on city names to see neon glow effects :fireworks:
+Since you are there don't forget to hover on city names to see them glowing :fireworks: :high_brightness:
 
-[see demo](https://olajurrek.github.io/clocks/)
+[See demo](https://olajurrek.github.io/clocks/)
 
 
 Fonts sources: 
