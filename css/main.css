@@ -9,17 +9,17 @@
 
 @font-face {
   font-family: "Kalinka";
-  src: url(fonts/kalinka-webfont.woff2), url(fonts/kalinka-webfont.woff);
+  src: url(../fonts/kalinka-webfont.woff2), url(../fonts/kalinka-webfont.woff);
 }
 
 @font-face {
   font-family: "Apropal";
-  src: url(fonts/apropal-bold-webfont.woff2), url(fonts/apropal-bold-webfont.woff);
+  src: url(../fonts/apropal-bold-webfont.woff2), url(../fonts/apropal-bold-webfont.woff);
 }
 
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html,
@@ -45,7 +45,7 @@ body {
   border: 3px solid #fff;
   border-radius: 50%;
   -webkit-box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92), inset 0 0 6px rgba(202, 228, 225, 0.92), inset 0 0 8px rgba(202, 228, 225, 0.34), inset 0 0 10px rgba(163, 183, 204, 0.52), inset 0 0 9px rgba(163, 183, 204, 0.92), inset 0 0 13px rgba(163, 183, 204, 0.78), inset 0 0 13px rgba(163, 183, 204, 0.92);
-  box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92), inset 0 0 6px rgba(202, 228, 225, 0.92), inset 0 0 8px rgba(202, 228, 225, 0.34), inset 0 0 10px rgba(163, 183, 204, 0.52), inset 0 0 9px rgba(163, 183, 204, 0.92), inset 0 0 13px rgba(163, 183, 204, 0.78), inset 0 0 13px rgba(163, 183, 204, 0.92);
+          box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92), inset 0 0 6px rgba(202, 228, 225, 0.92), inset 0 0 8px rgba(202, 228, 225, 0.34), inset 0 0 10px rgba(163, 183, 204, 0.52), inset 0 0 9px rgba(163, 183, 204, 0.92), inset 0 0 13px rgba(163, 183, 204, 0.78), inset 0 0 13px rgba(163, 183, 204, 0.92);
 }
 
 .local-clock .clock-face {
@@ -60,14 +60,14 @@ body {
   margin-left: 10px;
   border-radius: 20px;
   -webkit-transform-origin: right;
-  transform-origin: right;
+          transform-origin: right;
   -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
+          transform: rotate(90deg);
   -webkit-transition: all 0.05s cubic-bezier(0.42, 0, 0, 2.83);
   transition: all 0.05s cubic-bezier(0.42, 0, 0, 2.83);
   background-color: #5083a5;
   -webkit-box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92);
-  box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92);
+          box-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52), 0 0 9px rgba(163, 183, 204, 0.92), 0 0 13px rgba(163, 183, 204, 0.78), 0 0 13px rgba(163, 183, 204, 0.92);
 }
 
 .hours {
@@ -104,7 +104,7 @@ body {
 .clock-caption p:hover {
   color: #fff;
   -webkit-animation: neon-yellow 1.5s ease-in-out infinite alternate;
-  animation: neon-yellow 1.5s ease-in-out infinite alternate;
+          animation: neon-yellow 1.5s ease-in-out infinite alternate;
 }
 
 .digital-time {
@@ -122,9 +122,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .city-clock {
@@ -146,13 +146,13 @@ body {
 .cities-clocks .minutes {
   width: 55px;
   -webkit-transform: rotate(15deg);
-  transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
 .cities-clocks .seconds {
   width: 63px;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 /* Cities clocks captions */
@@ -162,11 +162,11 @@ body {
   display: flex;
   height: 53px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cities-clocks .clock-caption p {
@@ -185,7 +185,7 @@ body {
 
 .city-clock:nth-child(1) p:hover {
   -webkit-animation: neon-turquoise 1.5s ease-in-out infinite alternate;
-  animation: neon-turquoise 1.5s ease-in-out infinite alternate;
+          animation: neon-turquoise 1.5s ease-in-out infinite alternate;
 }
 
 /* London */
@@ -196,7 +196,7 @@ body {
 
 .city-clock:nth-child(2) p:hover {
   -webkit-animation: neon-pink 1.5s ease-in-out infinite alternate;
-  animation: neon-pink 1.5s ease-in-out infinite alternate;
+          animation: neon-pink 1.5s ease-in-out infinite alternate;
 }
 
 /* Moscow */
@@ -207,7 +207,7 @@ body {
 
 .city-clock:nth-child(3) p:hover {
   -webkit-animation: neon-blue 1.5s ease-in-out infinite alternate;
-  animation: neon-blue 1.5s ease-in-out infinite alternate;
+          animation: neon-blue 1.5s ease-in-out infinite alternate;
 }
 
 /* Tokyo  */
@@ -218,7 +218,7 @@ body {
 
 .city-clock:nth-child(4) p:hover {
   -webkit-animation: neon-violet 1.5s ease-in-out infinite alternate;
-  animation: neon-violet 1.5s ease-in-out infinite alternate;
+          animation: neon-violet 1.5s ease-in-out infinite alternate;
 }
 
 /* Text effects */
@@ -230,7 +230,6 @@ body {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--blue), 0 0 35px var(--blue), 0 0 40px var(--blue), 0 0 50px var(--blue), 0 0 75px var(--blue);
   }
 }
-
 @keyframes neon-blue {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px var(--blue), 0 0 70px var(--blue), 0 0 80px var(--blue), 0 0 100px var(--blue), 0 0 150px var(--blue);
