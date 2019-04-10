@@ -1,12 +1,29 @@
-/* Basic styles */
-:root {
-  --blue: #1fa2ff;
-  --pink: #cf8bf3;
-  --turquoise: #12fff7;
-  --violet: #9733ee;
-  --yellow: #ffdd1b;
+// Variables
+$blue: #1fa2ff;
+$pink: #cf8bf3;
+$turquoise: #12fff7;
+$violet: #9733ee;
+$yellow: #ffdd1b;
+
+// Mixins
+@mixin animation-property($animation-name) {
+  animation: $animation-name 1.5s ease-in-out infinite alternate;
 }
 
+@mixin animation-keyframes($animation-name, $color) {
+  @keyframes #{$animation-name} {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px $color,
+        0 0 70px $color, 0 0 80px $color, 0 0 100px $color, 0 0 150px $color;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px $color,
+        0 0 35px $color, 0 0 40px $color, 0 0 50px $color, 0 0 75px $color;
+    }
+  }
+}
+
+// Fonts
 @font-face {
   font-family: "Kalinka";
   src: url(../fonts/kalinka-webfont.woff2), url(../fonts/kalinka-webfont.woff);
@@ -18,6 +35,7 @@
     url(../fonts/apropal-bold-webfont.woff);
 }
 
+// Basic styles
 * {
   box-sizing: border-box;
 }
@@ -33,16 +51,9 @@ body {
   background: url(../irongrip.png);
 }
 
-/* General clock styles */
-.local-clock {
-  width: 250px;
-  margin: auto;
-  margin-top: 5vh;
-}
-
+// General clock styles
 .clock-face {
   position: relative;
-  border: 3px solid #fff;
   border-radius: 50%;
   box-shadow: 0 0 6px rgba(202, 228, 225, 0.92),
     0 0 8px rgba(202, 228, 225, 0.34), 0 0 10px rgba(163, 183, 204, 0.52),
@@ -53,10 +64,6 @@ body {
     inset 0 0 9px rgba(163, 183, 204, 0.92),
     inset 0 0 13px rgba(163, 183, 204, 0.78),
     inset 0 0 13px rgba(163, 183, 204, 0.92);
-}
-
-.local-clock .clock-face {
-  height: 250px;
 }
 
 .hand {
@@ -76,40 +83,22 @@ body {
     0 0 13px rgba(163, 183, 204, 0.92);
 }
 
-.hours {
-  width: 75px;
-}
-
-.minutes {
-  width: 95px;
-}
-
-.seconds {
-  width: 110px;
-}
-
 .clock-caption {
   width: 150px;
   text-align: center;
   margin: 15px auto;
-}
 
-.clock-caption > * {
-  border-radius: 5px/20px;
-}
+  > * {
+    border-radius: 5px/20px;
+  }
 
-.clock-caption p {
-  margin-bottom: 5px;
-  padding: 5px 0;
-  font: 1.5rem "Apropal", sans-serif;
-  color: var(--yellow);
-  text-transform: capitalize;
-  letter-spacing: 2px;
-}
-
-.clock-caption p:hover {
-  color: #fff;
-  animation: neon-yellow 1.5s ease-in-out infinite alternate;
+  p {
+    margin-bottom: 5px;
+    padding: 5px 0;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+  }
 }
 
 .digital-time {
@@ -121,7 +110,43 @@ body {
   color: #fff;
 }
 
-/* Cities' clocks styles */
+// Local clock
+.local-clock {
+  width: 250px;
+  margin: auto;
+  margin-top: 5vh;
+
+  .clock-face {
+    height: 250px;
+    border: 3px solid #fff;
+  }
+
+  .hours {
+    width: 75px;
+  }
+
+  .minutes {
+    width: 95px;
+  }
+
+  .seconds {
+    width: 110px;
+  }
+
+  .clock-caption {
+    p {
+      font-family: "Apropal", sans-serif;
+      color: $yellow;
+
+      &:hover {
+        color: #fff;
+        @include animation-property(neon-yellow);
+      }
+    }
+  }
+}
+
+// Cities' clocks
 .cities-clocks {
   display: flex;
   justify-content: space-around;
@@ -131,149 +156,79 @@ body {
 .city-clock {
   width: 150px;
   margin: 20px 40px;
+
+  .clock-face {
+    height: 150px;
+    border: 2px solid #fff;
+  }
+
+  .hours {
+    width: 40px;
+  }
+
+  .minutes {
+    width: 55px;
+    transform: rotate(15deg);
+  }
+
+  .seconds {
+    width: 63px;
+    transform: rotate(0deg);
+  }
+
+  .clock-caption {
+    div:first-child {
+      display: flex;
+      height: 53px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p:hover {
+      color: #fff;
+    }
+  }
 }
 
-/* Cities' clocks faces */
-.city-clock .clock-face {
-  height: 150px;
-  border: 2px solid #fff;
-}
-
-/* Cities clocks hands */
-.cities-clocks .hours {
-  width: 40px;
-}
-
-.cities-clocks .minutes {
-  width: 55px;
-  transform: rotate(15deg);
-}
-
-.cities-clocks .seconds {
-  width: 63px;
-  transform: rotate(0deg);
-}
-
-/* Cities clocks captions */
-.cities-clocks .clock-caption div:first-child {
-  display: flex;
-  height: 53px;
-  align-items: center;
-  justify-content: center;
-}
-
-.cities-clocks .clock-caption p {
-  letter-spacing: 2px;
-}
-
-.cities-clocks .clock-caption p:hover {
-  color: #fff;
-}
-
-/* New York */
+// New York
 .city-clock:nth-child(1) p {
   font-family: "Pacifico", cursive;
-  color: var(--turquoise);
+  color: $turquoise;
+  &:hover {
+    @include animation-property(neon-turquoise);
+  }
 }
 
-.city-clock:nth-child(1) p:hover {
-  animation: neon-turquoise 1.5s ease-in-out infinite alternate;
-}
-
-/* London */
+// London
 .city-clock:nth-child(2) p {
   font-family: "Plaster", cursive;
-  color: var(--pink);
+  color: $pink;
+  &:hover {
+    @include animation-property(neon-pink);
+  }
 }
 
-.city-clock:nth-child(2) p:hover {
-  animation: neon-pink 1.5s ease-in-out infinite alternate;
-}
-
-/* Moscow */
+// Moscow
 .city-clock:nth-child(3) p {
   font-family: "Kalinka", sans-serif;
-  color: var(--blue);
+  color: $blue;
+  &:hover {
+    @include animation-property(neon-blue);
+  }
 }
 
-.city-clock:nth-child(3) p:hover {
-  animation: neon-blue 1.5s ease-in-out infinite alternate;
-}
-
-/* Tokyo  */
+// Tokyo
 .city-clock:nth-child(4) p {
   font-family: "Audiowide", cursive;
-  color: var(--violet);
-}
-
-.city-clock:nth-child(4) p:hover {
-  animation: neon-violet 1.5s ease-in-out infinite alternate;
-}
-
-/* Text effects */
-@keyframes neon-blue {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-      0 0 40px var(--blue), 0 0 70px var(--blue), 0 0 80px var(--blue),
-      0 0 100px var(--blue), 0 0 150px var(--blue);
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-      0 0 20px var(--blue), 0 0 35px var(--blue), 0 0 40px var(--blue),
-      0 0 50px var(--blue), 0 0 75px var(--blue);
+  color: $violet;
+  &:hover {
+    @include animation-property(neon-violet);
   }
 }
 
-@keyframes neon-pink {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-      0 0 40px var(--pink), 0 0 70px var(--pink), 0 0 80px var(--pink),
-      0 0 100px var(--pink), 0 0 150px var(--pink);
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-      0 0 20px var(--pink), 0 0 35px var(--pink), 0 0 40px var(--pink),
-      0 0 50px var(--pink), 0 0 75px var(--pink);
-  }
-}
-
-@keyframes neon-turquoise {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-      0 0 40px var(--turquoise), 0 0 70px var(--turquoise),
-      0 0 80px var(--turquoise), 0 0 100px var(--turquoise),
-      0 0 150px var(--turquoise);
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-      0 0 20px var(--turquoise), 0 0 35px var(--turquoise),
-      0 0 40px var(--turquoise), 0 0 50px var(--turquoise),
-      0 0 75px var(--turquoise);
-  }
-}
-
-@keyframes neon-violet {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-      0 0 40px var(--violet), 0 0 70px var(--violet), 0 0 80px var(--violet),
-      0 0 100px var(--violet), 0 0 150px var(--violet);
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-      0 0 20px var(--violet), 0 0 35px var(--violet), 0 0 40px var(--violet),
-      0 0 50px var(--violet), 0 0 75px var(--violet);
-  }
-}
-
-@keyframes neon-yellow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-      0 0 40px var(--yellow), 0 0 70px var(--yellow), 0 0 80px var(--yellow),
-      0 0 100px var(--yellow), 0 0 150px var(--yellow);
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
-      0 0 20px var(--yellow), 0 0 35px var(--yellow), 0 0 40px var(--yellow),
-      0 0 50px var(--yellow), 0 0 75px var(--yellow);
-  }
-}
+// Text effects
+@include animation-keyframes(neon-blue, #{$blue});
+@include animation-keyframes(neon-pink, #{$pink});
+@include animation-keyframes(neon-turquoise, #{$turquoise});
+@include animation-keyframes(neon-violet, #{$violet});
+@include animation-keyframes(neon-yellow, #{$yellow});
