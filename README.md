@@ -11,3 +11,6 @@ Since you are here do not forget to hover over city names to see them glowing :w
 Fonts sources: 
 * [Apropal](https://kroje.org/fonts/apropal/)
 * [Kalinka](https://www.dafont.com/kalinka.font?text=Moscow&back=theme)
+
+
+After a few months I have decided to rewrite this small project to Sass to practise using mixins and it looks much cleaner now :blush:
